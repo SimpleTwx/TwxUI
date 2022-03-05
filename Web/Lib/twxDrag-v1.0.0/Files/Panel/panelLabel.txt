@@ -1,0 +1,196 @@
+﻿[{
+    "id": "1640966400",
+    "pid": "twx",
+    "title": "基础",
+    "img": "",
+    "type": ""
+},
+{
+    "id": "1640970100",
+    "pid": "1640966400",
+    "title": "文本内容",
+    "img": "txt.svg",
+    "type": "txt"
+},
+{
+    "id": "1640970200",
+    "pid": "1640966400",
+    "title": "输入框",
+    "img": "input.svg",
+    "type": "input"
+},
+{
+    "id": "1640970300",
+    "pid": "1640966400",
+    "title": "按钮",
+    "img": "button.svg",
+    "type": "button"
+},
+{
+    "id": "1640970400",
+    "pid": "1640966400",
+    "title": "漏水绳",
+    "img": "leaky_rope.png",
+    "type": "leaky_rope"
+},
+{
+    "id": "1640970500",
+    "pid": "1640966400",
+    "title": "视频",
+    "img": "video.png",
+    "type": "video"
+},
+{
+    "id": "1640970600",
+    "pid": "1640966400",
+    "title": "流水线",
+    "img": "running.svg",
+    "type": "running"
+},
+{
+    "id": "1640970700",
+    "pid": "1640966400",
+    "title": "弹出框",
+    "img": "layout.svg",
+    "type": "layout"
+},
+{
+    "id": "1641052800",
+    "pid": "twx",
+    "title": "图表",
+    "img": "",
+    "type": ""
+},
+{
+    "id": "1641060000",
+    "pid": "1641052800",
+    "title": "曲线图",
+    "img": "line.svg",
+    "type": "line"
+},
+{
+    "id": "1641060100",
+    "pid": "1641052800",
+    "title": "柱状图",
+    "img": "bar.svg",
+    "type": "bar"
+},
+{
+    "id": "1641060200",
+    "pid": "1641052800",
+    "title": "扇形图",
+    "img": "pie.svg",
+    "type": "pie"
+},
+{
+    "id": "1641060300",
+    "pid": "1641052800",
+    "title": "圆环",
+    "img": "ring.svg",
+    "type": "ring"
+},
+{
+    "id": "1641060400",
+    "pid": "1641052800",
+    "title": "仪表盘",
+    "img": "dashboard.svg",
+    "type": "dashboard"
+},
+{
+    "id": "1641060500",
+    "pid": "1641052800",
+    "title": "进度条",
+    "img": "progress.svg",
+    "type": "progress"
+},
+{
+    "id": "1641060600",
+    "pid": "1641052800",
+    "title": "地图",
+    "img": "earth.svg",
+    "type": "earth"
+},
+{
+    "id": "1641139200",
+    "pid": "twx",
+    "title": "样式组件",
+    "img": "",
+    "type": ""
+},
+{
+    "id": "1641140100",
+    "pid": "1641139200",
+    "title": "时间",
+    "img": "time.svg",
+    "type": "time"
+},
+{
+    "id": "1641140200",
+    "pid": "1641139200",
+    "title": "天气",
+    "img": "air.svg",
+    "type": "air"
+},
+{
+    "id": "1641140300",
+    "pid": "1641139200",
+    "title": "菜单列表",
+    "img": "menu.svg",
+    "type": "menu"
+},
+{
+    "id": "1641140400",
+    "pid": "1641139200",
+    "title": "设备测点",
+    "img": "spot.svg",
+    "type": "spot"
+},
+{
+    "id": "1641225600",
+    "pid": "twx",
+    "title": "脚本工具",
+    "img": "",
+    "type": ""
+},
+{
+    "id": "1641230000",
+    "pid": "1641225600",
+    "title": "虚拟键盘",
+    "img": "keyboard.svg",
+    "type": "keyboard"
+},
+{
+    "id": "1641230200",
+    "pid": "1641225600",
+    "title": "虚拟设备",
+    "img": "virtual_device.svg",
+    "type": "virtual_device"
+},
+{
+    "id": "1641230300",
+    "pid": "1641225600",
+    "title": "自定义脚本",
+    "img": "js.svg",
+    "type": "js"
+},
+{
+    "id": "1641312000",
+    "pid": "twx",
+    "title": "自定义",
+    "img": "",
+    "type": ""
+},
+{
+    "id": "1641320100",
+    "pid": "1641312000",
+    "title": "模板",
+    "img": "txt.svg",
+    "type": "txt"
+},
+{
+    "id": "1641320200",
+    "pid": "1641312000",
+    "title": "显示",
+    "img": "txt.svg",
+    "type": "txt"
+}]

@@ -1,0 +1,640 @@
+﻿html, body {
+    margin: 0;
+    height: 100%;
+    font-size: 62.5%;
+    overflow: hidden;
+}
+
+/*取消浏览器默认输入框样式*/
+input, button, select, textarea, ul {
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+
+    input.sel-active {
+        background: rgba(0,0,0,0.8) !important;
+    }
+
+.btn {
+    padding: 0.4rem 2rem;
+    margin: 0.5rem;
+    border: 0.2rem solid rgba(0,0,0,0.2);
+    border-radius: 0;
+}
+
+/*滚动条整体宽度*/
+::-webkit-scrollbar {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+/*滚动条滑槽样式*/
+::-webkit-scrollbar-track {
+    /*-webkit-box-shadow: inset 0 0 0.6rem rgba(0,0,0,0.2);*/
+    border-radius: 0.8rem;
+}
+
+/*滚动条样式*/
+::-webkit-scrollbar-thumb {
+    border-radius: 0.8rem;
+    background: rgba(183, 218, 255, 0.90);
+    -webkit-box-shadow: inset 0 0 0.6rem rgba(0,0,0,0.4);
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        padding-right: 0;
+        background: rgba(183, 218, 255, 0.50);
+    }
+
+    ::-webkit-scrollbar-thumb:active {
+        background: rgba(183, 218, 255, 0.50);
+    }
+
+    /*浏览器失焦的样式*/
+    ::-webkit-scrollbar-thumb:window-inactive {
+        -webkit-box-shadow: none;
+    }
+/*标签不能被选中*/
+.none-select {
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/*自动铺满可视区域*/
+.full-flex {
+    height: 100%;
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+/*框架头*/
+.twx-drag-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex: 1;
+    font-size: 1.2rem;
+    flex-direction: row;
+    overflow: hidden;
+    background-color: #131e2f;
+    color: #b7daff;
+}
+
+    .twx-drag-container.is-vertical {
+        flex-direction: column;
+    }
+
+    .twx-drag-container .twx-header {
+        height: 4rem;
+        width: 100%;
+        padding: 0;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 5px 2px 6px rgba(0,10,38,0.8);
+    }
+
+    .twx-drag-container .twx-aside {
+        width: 20rem;
+        /*border-right: 0.1rem solid rgba(0,123,255,0.20);*/
+        background-color: #192c4f;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .twx-drag-container .twx-navbar {
+        line-height: 2.6rem;
+        padding: 0 1rem;
+        width: 100%;
+        display: flex;
+        border-bottom: 1px solid #192c4f;
+        /*background-color: #192c4f;*/
+    }
+
+    .twx-drag-container .twx-main {
+        flex: 1;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        /*background: rgba(183, 218, 255, 0.50);*/
+    }
+
+    .twx-drag-container .twx-footer {
+        padding: 0 1rem;
+        line-height: 2.6rem;
+        width: 100%;
+        text-align: left;
+        background-color: #192c4f;
+    }
+/*导航标签*/
+ul.twx-ul-nav {
+    margin: 0;
+    padding: 0;
+    height: 4rem;
+    line-height: 4rem;
+}
+
+    ul.twx-ul-nav li {
+        position: relative;
+        padding: 0 1.5rem;
+        height: 100%;
+        margin: 0 auto;
+        text-align: center;
+        cursor: pointer;
+        float: left;
+        list-style: none;
+    }
+
+        ul.twx-ul-nav li:hover {
+            background-color: #274677;
+            color: #24c8ea;
+        }
+
+        ul.twx-ul-nav li table {
+            height: 100%;
+        }
+
+            ul.twx-ul-nav li table div.flex {
+                line-height: normal;
+                display: flex;
+                height: 100%;
+                align-items: center;
+            }
+
+                ul.twx-ul-nav li table div.flex input {
+                    width: 5.5rem;
+                    padding: 0.5rem;
+                    text-align: center;
+                    background: rgba(0,0,0,0.2);
+                    border: none;
+                    color: #fff;
+                }
+
+                ul.twx-ul-nav li table div.flex span {
+                    margin: 0 0.5rem;
+                }
+
+        ul.twx-ul-nav li img {
+            height: 2rem;
+            padding-right: 0.8rem;
+            margin-top: -4px;
+        }
+
+        ul.twx-ul-nav li i {
+            padding-right: 0.8rem;
+        }
+
+        ul.twx-ul-nav li:hover .drop-down {
+            display: block;
+            color: #fff;
+        }
+        /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+        ul.twx-ul-nav li .drop-down {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 20rem;
+            color: #000;
+            display: none;
+            z-index: 9999;
+            background-color: #274677;
+            text-align: left;
+            white-space: nowrap; /*强制不换行*/
+        }
+
+            ul.twx-ul-nav li .drop-down ul {
+                width: 100%;
+            }
+
+                ul.twx-ul-nav li .drop-down ul li {
+                    width: 100%;
+                    clear: left;
+                    text-align: left;
+                }
+
+                    ul.twx-ul-nav li .drop-down ul li table {
+                        width: 100%;
+                    }
+
+                        ul.twx-ul-nav li .drop-down ul li table tr td:nth-child(2) {
+                            width: 50%;
+                            text-align: right;
+                        }
+/*画板标签*/
+.panel {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+    .panel .panel-name {
+        height: 3.5rem;
+        line-height: 3.5rem;
+        overflow: hidden;
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+        .panel .panel-name:hover {
+            color: #1a96ff;
+        }
+
+        .panel .panel-name i {
+            width: 3rem;
+            text-align: center;
+        }
+
+            .panel .panel-name i.fa-plus:hover {
+                color: #f00;
+            }
+
+    .panel .panel-info {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .panel .child {
+        width: 3.8rem;
+        height: 3rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+        .panel .child i {
+            width: 2.6rem;
+            font-size: 2.6rem !important;
+            line-height: 2.6rem;
+        }
+
+        .panel .child img {
+            max-width: 3rem;
+            max-height: 2.6rem;
+            line-height: 2.6rem;
+            padding: 0.2rem;
+        }
+
+        .panel .child:hover {
+            color: #1a96ff;
+            background: rgba(183, 218, 255, 0.20);
+            border-radius: 0.2rem;
+        }
+
+/*标签拖拽*/
+.panel-move {
+    position: fixed;
+    cursor: pointer;
+    background-color: rgba(183, 218, 255, 0.50);
+    border-radius: 0.3rem;
+}
+
+    .panel-move img {
+        max-width: 5rem;
+        max-height: 4rem;
+        line-height: 4rem;
+        padding: 0.5rem;
+    }
+/*画板项目*/
+.panel-project {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+    .panel-project .panel-name {
+        height: 3rem;
+        line-height: 3rem;
+        overflow: hidden;
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+        .panel-project .panel-name:hover {
+            color: #1a96ff;
+        }
+
+        .panel-project .panel-name i {
+            width: 3rem;
+            text-align: center;
+        }
+
+        .panel-project .panel-name.panel-flex {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+    .panel-project .fa-hover:hover {
+        color: #f8c705;
+    }
+
+    .panel-project .panel-info {
+        width: 100%;
+        display: flex;
+        flex: 1;
+        overflow: auto;
+        flex-direction: column;
+    }
+
+    .panel-project .child {
+        width: 100%;
+        height: 3.2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+        .panel-project .child i {
+            width: 2.5rem;
+            text-align: center;
+            font-size: 1.4rem !important;
+        }
+
+        .panel-project .child:hover {
+            color: #1a96ff;
+            background: rgba(183, 218, 255, 0.20);
+        }
+
+        .panel-project .child.select {
+            color: #b7daff;
+            background: #0062cc;
+        }
+
+        .panel-project .child .span-hover {
+            display: none;
+        }
+
+        .panel-project .child:hover .span-hover {
+            display: block;
+        }
+
+        .panel-project .child span input {
+            width: 15.5rem;
+            text-align: left;
+            padding: 0.3rem;
+        }
+
+/*面板其他标签样式*/
+#drag-panel {
+    flex: 1;
+    overflow: auto;
+    min-height: 10rem;
+}
+
+#project-panel {
+    display: flex;
+    height: 30rem;
+}
+/*控件编辑框*/
+.panel-twx, .panel-twx-sel {
+    position: absolute;
+    cursor: pointer;
+}
+    /*编辑框*/
+    .panel-twx .panel-twx-edit {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #1a96ff;
+    }
+
+        .panel-twx .panel-twx-edit .center-top {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            margin-left: -6px;
+            border: 1px solid #1a96ff;
+            border-radius: 50%;
+        }
+
+        .panel-twx .panel-twx-edit .left-top {
+            position: absolute;
+            top: -9px;
+            left: -9px;
+            width: 8px;
+            height: 8px;
+            background: #1a96ff;
+            cursor: nw-resize;
+        }
+
+        .panel-twx .panel-twx-edit .left-bottom {
+            position: absolute;
+            bottom: -9px;
+            left: -9px;
+            width: 8px;
+            height: 8px;
+            background: #1a96ff;
+            cursor: sw-resize;
+        }
+
+        .panel-twx .panel-twx-edit .right-top {
+            position: absolute;
+            top: -9px;
+            right: -9px;
+            width: 8px;
+            height: 8px;
+            background: #1a96ff;
+            cursor: ne-resize;
+        }
+
+        .panel-twx .panel-twx-edit .right-bottom {
+            position: absolute;
+            bottom: -9px;
+            right: -9px;
+            width: 8px;
+            height: 8px;
+            background: #1a96ff;
+            cursor: se-resize;
+        }
+
+.panel-twx-sel-label .panel-twx-edit .center-top, .panel-twx-sel-label .panel-twx-edit .left-top, .panel-twx-sel-label .panel-twx-edit .left-bottom, .panel-twx-sel-label .panel-twx-edit .right-top, .panel-twx-sel-label .panel-twx-edit .right-bottom {
+    background: #fac600;
+}
+/*垂直水平居中*/
+.panel-twx .panel-twx-table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+    /*输入框*/
+    .panel-twx .panel-twx-table input {
+        width: 100%;
+        height: 100%;
+        padding: 0 5px;
+    }
+
+/*右键菜单*/
+#right-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    background: #274677;
+    z-index: 9999999999999;
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+    #right-menu table {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+        #right-menu table tbody tr {
+            width: 100%;
+            height: 20px;
+            line-height: 20px;
+            list-style: none;
+        }
+
+            #right-menu table tbody tr.menu-item {
+                cursor: pointer;
+            }
+
+                #right-menu table tbody tr.menu-item:hover td {
+                    color: #24c8ea;
+                }
+
+                #right-menu table tbody tr.menu-item td {
+                    width: 100%;
+                    cursor: pointer;
+                    list-style: none;
+                    padding: 5px 10px;
+                }
+
+                    #right-menu table tbody tr.menu-item td:first-child {
+                        text-align: left;
+                    }
+
+                    #right-menu table tbody tr.menu-item td:nth-child(2) {
+                        text-align: right;
+                    }
+
+            #right-menu table tbody tr td hr {
+                color: #ccc;
+                background-color: #ccc;
+                border: 0;
+                height: 1px;
+                margin: 1px auto;
+            }
+/*辅助提示*/
+.panel-tips {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2px 5px;
+    color: #f00;
+    background: rgba(10, 69, 161, 0.50);
+    font-size: 1.2rem;
+    z-index: 999999999999;
+}
+/*弹出层*/
+.panel-layout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    background: #192c4f;
+}
+
+    .panel-layout .layer-body {
+        display: flex;
+        flex: 1;
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 10px;
+        font-size: 1.3rem;
+    }
+
+        .panel-layout .layer-body div {
+            width: 50%;
+            text-align: right;
+        }
+
+    .panel-layout .layer-input {
+        background: rgba(0,0,0,0);
+        border: 1px solid rgba(26, 150, 255, 0.50);
+        border-radius: 3px;
+        padding: 5px;
+        width: 128px;
+        color: #fff;
+    }
+
+        .panel-layout .layer-input:hover, .layer-input:focus {
+            border-color: rgba(26, 150, 255, 1);
+        }
+
+        .panel-layout .layer-input.input-height {
+            width: 50px;
+        }
+
+
+    .panel-layout .layer-btn {
+        display: flex;
+        justify-content: flex-end;
+        color: #fab056;
+        padding: 0.75rem 1.25rem;
+    }
+
+        .panel-layout .layer-btn span {
+            display: inline-block;
+            text-align: center;
+            padding: 1px 10px 2px 10px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: 2px solid rgba(255, 255, 255,0.5);
+            color: #fff;
+        }
+
+            .panel-layout .layer-btn span:hover {
+                opacity: 0.6;
+            }
+
+            .panel-layout .layer-btn span:active {
+                opacity: 1;
+            }
+
+            .panel-layout .layer-btn span:nth-child(1) {
+                background-color: #25d9ad;
+            }
+
+            .panel-layout .layer-btn span:nth-child(2) {
+                background-color: #24c8ea;
+            }
+
+            .panel-layout .layer-btn span:nth-child(3) {
+                background-color: #1a96ff;
+            }
+
+            .panel-layout .layer-btn span:nth-child(4) {
+                background-color: #1a96ff;
+            }
